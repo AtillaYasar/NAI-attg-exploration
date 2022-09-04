@@ -3,7 +3,7 @@ import json, requests, time, urllib.parse, os, ast, math
 #sortAndSumDistributions(inFolder) will call linkDistributions(inFolder)
 
 defaultHeaders = {'Content-Type': 'application/json',
-                 'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik9MeUVGQ2F2MkhxemxlT3JVc1JnRSIsIm5jIjoiSmtrbmRBNTVoYkpLU2hpdXhDR2pOIiwiaWF0IjoxNjYwNjI1MzQ2LCJleHAiOjE2NjMyMTczNDZ9.Re4rsRmz2Jtd2clZjzCf_Am6IKhOCsl1YYbv3Gjrjn4'
+                 'authorization': 'Bearer secretauthorizationstring'
                  }
 
 def makeJson(dic, filename):
