@@ -1,32 +1,64 @@
-import json, requests, time, urllib.parse, os, ast, math
+import json, requests, time, os, ast, math
+from globalVariables import headers, defaultPayload
 
-#sortAndSumDistributions(inFolder) will call linkDistributions(inFolder)
+# I included stuff about dependencies in front of every function, which currently has no use.
+# I'll later add some stuff that makes sense of that.
 
-defaultHeaders = {'Content-Type': 'application/json',
-                 'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik9MeUVGQ2F2MkhxemxlT3JVc1JnRSIsIm5jIjoiSmtrbmRBNTVoYkpLU2hpdXhDR2pOIiwiaWF0IjoxNjYwNjI1MzQ2LCJleHAiOjE2NjMyMTczNDZ9.Re4rsRmz2Jtd2clZjzCf_Am6IKhOCsl1YYbv3Gjrjn4'
-                 }
+# takes a default dictionary and one containing only the changes to be made, returns the changed dictionary
+# for example: default = {a:0, b:1, ..., z:25}, changes = {b:420}, it will return default, except with b changed to 420.
+def alterDefault(changes, default):
+    #no dependencies
+    
+    changesKeys = changes.keys()
+    defaultKeys = default.keys()
+    
+    res = {}
+    for option in defaultKeys:
+        if option in changesKeys:
+            res[option] = changes[option]
+        else:
+            res[option] = default[option]
+            
+    return res
+
+def setPayload(newPayload):
+    #dependencies
+    #setPayload: payload
+    
+    global payload
+    payload = newPayload
+
+def updateScriptsPayload(changes):
+    setPayload(alterDefault(changes, defaultPayload))
 
 def makeJson(dic, filename):
+    #dependencies
+    #openJson: json
+    
     with open(filename, 'w', encoding="utf-8") as f:
         json.dump(dic, f, indent=2)
         f.close()
 
 def openJson(filename):
+    #dependencies
+    #openJson: json
+    
     with open(filename, 'r', encoding="utf-8") as f:
         contents = json.load(f)
         f.close()
     return contents
 
 generationCount = 0
-
 #generates text using the NovelAI API
 #also prints the count each time it generated something.
-def generateTextEasy(payload):
+def generateText():
+    #dependencies
+    #generateText: ast, json, requests, generationCount
+    
     global generationCount
-    #import ast, json, requests
 
     url = "https://api.novelai.net/ai/generate"
-    response = requests.request("POST", url, headers=defaultHeaders, data = json.dumps(payload))
+    response = requests.request("POST", url, headers=headers, data = json.dumps(payload))
     content = response.content
     
     decodedContent = content.decode()
@@ -41,22 +73,40 @@ def generateTextEasy(payload):
     
     return {"payload":payload, "output":output, "logprobs":logprobs}
 
-stuffFolder = r"C:\Users\Gebruiker\Desktop\attg exploration\stuff"
-def justGenerate(payload):
+def justGenerate(iterations):
+    #dependencies
+    #justGenerate: generateText, makeJson, payload, uniqueTime, os
+
+    #write prompt
     prompt = payload['input']
-    #print('===== prompt =====', '\n', prompt, '\n', '===== outputs =====')
+    if 'outputs.txt' in os.listdir(os.getcwd()):
+        with open('previous outputs.txt', 'w') as f2:
+            with open('outputs.txt', 'r') as f:
+                f2.write(f.read())
+        
+    with open('outputs.txt', 'w') as f:
+        f.write(''.join(['====== prompt: ======\n', prompt, '\n====== outputs ======\n', '------------------------------', '\n']))
+        print(''.join(['====== prompt: ======\n', prompt, '\n====== outputs ======\n', '------------------------------', '\n']))
+
+    #write each iteration as it comes out
     for i in range(iterations):
-        response = generateTextEasy(payload)
+        response = generateText()
         output = response['output']
-        #stuff = ''.join(['=== prompt ===\n', prompt, '\n=== output ===\n', output, '\n', '------------------------------'])
-        print(''.join(['----------', '\n', output, '\n']))
-        makeJson({'prompt':prompt,'output':output}, stuffFolder + "\\" + uniqueTime()+".json")
+        
+        with open('outputs.txt', 'a') as f:
+            f.write(''.join([output, '\n', '------------------------------', '\n']))
+            print(''.join([output, '\n', '------------------------------', '\n']))
 
 def splitDictionary(dict_arg, names, contents, ID, extension, folder):
+    #dependencies
+    #splitDictionary: makeJson
+    
     if len(names) != len(contents):
         exit('names and contents lists must have equal length')
+        
     def makeName(name):
         return "".join(['(', name, ') ', ID, extension])
+    
     manyDicts = []
     for lst in contents:
         subset = {'ID':ID}
@@ -70,6 +120,9 @@ def splitDictionary(dict_arg, names, contents, ID, extension, folder):
         makeJson(manyDicts[n], filePath)
 
 def uniqueTime():
+    #dependencies
+    #uniqueTime: time
+    
     return str(time.time()).replace('.', 'd')
 
 
@@ -79,6 +132,8 @@ def openListFile(filename):
     return lst
 
 def listToFile(list_arg, filename, overwrite = 0):
+    #no dependencies
+    
     if overwrite:
         mode = "w"
     else:
@@ -119,6 +174,7 @@ def processLogprobs(logprobs):
 def processResponse(context, response):
     #dependencies:
     # processResponse: processLogprobs, dissectAttg
+    
     logprobs = processLogprobs(response["logprobs"])
     output = response['output']
     tags = dissectAttg(context + output)
@@ -126,17 +182,18 @@ def processResponse(context, response):
 
 #uses promptList to generate.. puts output files in outputFolder.
 def firstStageGeneration(promptList, outputFolder):
-    def payloadToFiles(payload, splittingArguments, extraStuff={}):
+    #dependencies:
+    # firstStageGeneration: generateText, processResponse, uniqueTime
+    def promptToFiles(prompt, splittingArguments, extraStuff={}):
 
-        response = generateTextEasy(payload)
+        response = generateText()
         
-        prompt = payload['prompt']
         outputsName = outputFolder + "\\outputs.txt"
         with open(outputsName, "a") as f:
-            f.write(''.join(['prompt:\n', prompt, '\noutput:\n', response['output'], '\n', '------------------------------', '\n']))
+            f.write(''.join([response['output'], '\n', '------------------------------', '\n']))
             
         processed = processResponse(prompt, response)
-        
+
         fullDict = extraStuff
         for k, v in processed.items():
             fullDict[k] = v
@@ -152,11 +209,13 @@ def firstStageGeneration(promptList, outputFolder):
                           'extension':'.json',
                           'folder': outputFolder }
 
-    for payload in payloadList:
-        prompt = payload['input']
+    for prompt in promptList:
+        setPayload(alterDefault({'input':prompt}, payload))
         promptToFiles(prompt, splittingArguments, {'context':prompt})
 
 def cleanEdges(string):
+    #no dependencies
+    
     if len(string) == 0:
         return string
     dirty = [" ","\t","\n"]
@@ -175,6 +234,9 @@ def cleanEdges(string):
 dictCrawlerResult = {}
 def updateOriginals(context):
     #note: uses dictCrawlerResult and 2 global variables. danger danger.
+    #dependencies
+    #updateOriginals: cleanEdges
+    
     global originalCat, originalEntry
     def getOriginal():
         originalCat, _, originalEntry = map(cleanEdges, cleanEdges(context).partition('[ ')[2].partition(';')[0].partition(':'))
@@ -187,6 +249,8 @@ def updateOriginals(context):
 
 #dictionary crawler, adjusted to collect tag stuff."
 def dictCrawler(arg):
+    #dependencies
+    #dictCrawler: updateOriginals
     
     def ifList(listArg):
         for item in listArg:
@@ -214,10 +278,11 @@ def dictCrawler(arg):
         ifDict(arg)
     else:
         ifElse(arg)
+
 def pListToFolder(pList, outFolder):
     #dependencies:
     #pListtoFolder: time, firstStageGeneration, openListFile, dictCrawler, makeJson, os
-
+    
     os.mkdir(outFolder)
 
     firstStageGeneration(pList, outFolder)
@@ -229,19 +294,25 @@ def pListToFolder(pList, outFolder):
 
 
     overview = {'list of prompts':pList,
-                'payload':None,
-                'amount of requests':len([name for name in os.listdir(os.getcwd()) if 'first stage raw' in name])}
-    makeJson(overview, 'overview of this folder.json')
+                'payload':payload,
+                'amount of requests':len([name for name in os.listdir(outFolder) if 'first stage raw' in name])}
+    makeJson(overview, outFolder+'\\overview of this folder.json')
     
     #os.rename(outFolder, outFolder.replace(' (b)', ''))
 
 def decode(ids):
+    #dependencies
+    #decode: tokenList
+
     # tokenList = openListFile('gpt2 tokens')
     if type(ids) == int:
         return tokenList[ids]
     return list(map(lambda ID:tokenList[int(ID)], ids))
 
 def contToDistr(prompt, logprobs):
+    #dependencies
+    #contToDistr: decode, math
+    
     chosenTokens = []
     distributions = {}
 
@@ -262,7 +333,7 @@ def contToDistr(prompt, logprobs):
 
 def linkDistributions(inFolder):
     #dependencies:
-    #listDistributions: [contToDistr, decode, processLogprobs, listToFile, openListFile]
+    #listDistributions: contToDistr, decode, processLogprobs, listToFile, openListFile
 
     global tokenList
     tokenList = openListFile('gpt2 tokens')
@@ -362,6 +433,8 @@ def sortAndSumDistributions(inFolder):
 
 #takes a string containing attg stuff, returns a dictionary of category:entry pairs.
 def dissectAttg(attg):
+    #dependencies:
+    #dissectAttg: cleanEdges
     res = cleanEdges(cleanEdges(attg).partition("[")[2].partition("]")[0]).split("; ")
     def f(l):
         res = {}
@@ -381,9 +454,9 @@ def dissectAttg(attg):
     res = f(res)
     return res
 
-
-#gathers the tags from files with 'first stage normal' in the name and puts them in the same folder, in 'first stage collection'
 def firstStageCollection(outputFolder):
+    #dependencies:
+    #firstStageCollection: os, openJson, listToFile
     relevantFiles = [name for name in os.listdir(outputFolder) if 'first stage normal' in name]
     gatheredTags = []
     for name in relevantFiles:

@@ -1,0 +1,546 @@
+{
+  "William Shakespeare": {
+    "Min. estimated sales": "2 billion[1]",
+    "Max. estimated sales": "4 billion[2]",
+    "Original language": "English",
+    "Genre and/or major works": "Plays and poetry e.g.A Midsummer Night's Dream, Romeo and Juliet, Macbeth, Hamlet",
+    "Number of books": "42",
+    "Nationality": "English"
+  },
+  "Agatha Christie": {
+    "Min. estimated sales": "2 billion[3]",
+    "Max. estimated sales": "4 billion[2]",
+    "Original language": "English",
+    "Genre and/or major works": "Whodunits including the Miss Marple and Hercule Poirot series",
+    "Number of books": "85",
+    "Nationality": "British"
+  },
+  "Barbara Cartland": {
+    "Min. estimated sales": "500 million[4]",
+    "Max. estimated sales": "750 million[5]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance",
+    "Number of books": "723",
+    "Nationality": "British"
+  },
+  "Danielle Steel": {
+    "Min. estimated sales": "500 million[6]",
+    "Max. estimated sales": "800 million[7]",
+    "Original language": "English",
+    "Genre and/or major works": "General fiction, Romance",
+    "Number of books": "179",
+    "Nationality": "American"
+  },
+  "Harold Robbins": {
+    "Min. estimated sales": "750 million[8]",
+    "Max. estimated sales": "750 million[9]",
+    "Original language": "English",
+    "Genre and/or major works": "Adventure",
+    "Number of books": "23",
+    "Nationality": "American"
+  },
+  "Enid Blyton": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "600 million[12]",
+    "Original language": "English",
+    "Genre and/or major works": "Children's literature, Noddy, The Famous Five, The Secret Seven",
+    "Number of books": "800",
+    "Nationality": "English"
+  },
+  "Sidney Sheldon": {
+    "Min. estimated sales": "370 million[13]",
+    "Max. estimated sales": "600 million[14]",
+    "Original language": "English",
+    "Genre and/or major works": "Suspense",
+    "Number of books": "21",
+    "Nationality": "American"
+  },
+  "J. K. Rowling": {
+    "Min. estimated sales": "500 million[16]",
+    "Max. estimated sales": "500 million[16]",
+    "Original language": "English",
+    "Genre and/or major works": "Harry Potter, Fantastic Beasts and Where to Find Them, Cormoran Strike , Young Adult,fantasy, crime fiction",
+    "Number of books": "22",
+    "Nationality": "British"
+  },
+  "Gilbert Patten": {
+    "Min. estimated sales": "125 million[17]",
+    "Max. estimated sales": "500 million[18]",
+    "Original language": "English",
+    "Genre and/or major works": "Adolescent adventures",
+    "Number of books": "209",
+    "Nationality": "American"
+  },
+  "Dr. Seuss": {
+    "Min. estimated sales": "100 million[19]",
+    "Max. estimated sales": "500 million[20]",
+    "Original language": "English",
+    "Genre and/or major works": "Children's literature",
+    "Number of books": "44",
+    "Nationality": "American"
+  },
+  "Dean Koontz": {
+    "Min. estimated sales": "325 million[26]",
+    "Max. estimated sales": "400 million[27]",
+    "Original language": "English",
+    "Genre and/or major works": "Horror, thriller, science fiction, fantasy",
+    "Number of books": "91",
+    "Nationality": "American"
+  },
+  "Jackie Collins": {
+    "Min. estimated sales": "250 million[28]",
+    "Max. estimated sales": "400 million[29]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance",
+    "Number of books": "25",
+    "Nationality": "British"
+  },
+  "Horatio Alger": {
+    "Min. estimated sales": "200 million[30]",
+    "Max. estimated sales": "400 million[31]",
+    "Original language": "English",
+    "Genre and/or major works": "Dime novels",
+    "Number of books": "135",
+    "Nationality": "American"
+  },
+  "Nora Roberts": {
+    "Min. estimated sales": "145 million[32]",
+    "Max. estimated sales": "400 million[33]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance",
+    "Number of books": "200+",
+    "Nationality": "American"
+  },
+  "R. L. Stine": {
+    "Min. estimated sales": "100 million[34]",
+    "Max. estimated sales": "400 million[35]",
+    "Original language": "English",
+    "Genre and/or major works": "Goosebumps series, Fear Street series, horror, comedy",
+    "Number of books": "430+",
+    "Nationality": "American"
+  },
+  "Stephen King": {
+    "Min. estimated sales": "300 million[36]",
+    "Max. estimated sales": "350 million[37]",
+    "Original language": "English",
+    "Genre and/or major works": "Horror, science fiction, fantasy, It, The Shining, The Stand, Pet Sematary, Salem's Lot, The Green Mile",
+    "Number of books": "77",
+    "Nationality": "American"
+  },
+  "Jeffrey Archer": {
+    "Min. estimated sales": "250 million[42]",
+    "Max. estimated sales": "330 million[43]",
+    "Original language": "English",
+    "Genre and/or major works": "Saga, thriller, short stories, Kane and Abel, The Clifton Chronicles",
+    "Number of books": "33",
+    "Nationality": "British"
+  },
+  "Louis L'Amour": {
+    "Min. estimated sales": "230 million[44]",
+    "Max. estimated sales": "330 million[45]",
+    "Original language": "English",
+    "Genre and/or major works": "Western",
+    "Number of books": "101",
+    "Nationality": "American"
+  },
+  "Erle Stanley Gardner": {
+    "Min. estimated sales": "100 million[47]",
+    "Max. estimated sales": "325 million[48]",
+    "Original language": "English",
+    "Genre and/or major works": "Mystery, Perry Mason",
+    "Number of books": "140",
+    "Nationality": "American"
+  },
+  "Edgar Wallace": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "300 million[49]",
+    "Original language": "English",
+    "Genre and/or major works": "Detective",
+    "Number of books": "175",
+    "Nationality": "English"
+  },
+  "Janet Dailey": {
+    "Min. estimated sales": "300 million[50]",
+    "Max. estimated sales": "300 million[51]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance",
+    "Number of books": "93",
+    "Nationality": "American"
+  },
+  "Robert Ludlum": {
+    "Min. estimated sales": "110 million[55]",
+    "Max. estimated sales": "290 million[56]",
+    "Original language": "English",
+    "Genre and/or major works": "Espionage, Jason Bourne",
+    "Number of books": "40",
+    "Nationality": "American"
+  },
+  "James Patterson": {
+    "Min. estimated sales": "150 million[58]",
+    "Max. estimated sales": "275 million[59]",
+    "Original language": "English",
+    "Genre and/or major works": "Thriller, Alex Cross Maximum Ride",
+    "Number of books": "98",
+    "Nationality": "American"
+  },
+  "Stan and Jan Berenstain": {
+    "Min. estimated sales": "200 million[62]",
+    "Max. estimated sales": "260 million[63]",
+    "Original language": "English",
+    "Genre and/or major works": "Berenstain Bears",
+    "Number of books": "300+",
+    "Nationality": "American"
+  },
+  "Roald Dahl": {
+    "Min. estimated sales": "200 million[64]",
+    "Max. estimated sales": "250 million[65]",
+    "Original language": "English",
+    "Genre and/or major works": "Children's literature",
+    "Number of books": "50",
+    "Nationality": "British"
+  },
+  "John Grisham": {
+    "Min. estimated sales": "100 million[66]",
+    "Max. estimated sales": "250 million[67]",
+    "Original language": "English",
+    "Genre and/or major works": "Legal thriller",
+    "Number of books": "22",
+    "Nationality": "American"
+  },
+  "Zane Grey": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "250 million[68]",
+    "Original language": "English",
+    "Genre and/or major works": "Western",
+    "Number of books": "",
+    "Nationality": "American"
+  },
+  "Irving Wallace": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "250 million[69]",
+    "Original language": "English",
+    "Genre and/or major works": "Suspense",
+    "Number of books": "",
+    "Nationality": "American"
+  },
+  "J. R. R. Tolkien": {
+    "Min. estimated sales": "200 million[70]",
+    "Max. estimated sales": "250 million[71]",
+    "Original language": "English",
+    "Genre and/or major works": "The Lord of the Rings, The Hobbit, classical fantasy",
+    "Number of books": "36",
+    "Nationality": "English"
+  },
+  "Carter Brown": {
+    "Min. estimated sales": "100 million[78]",
+    "Max. estimated sales": "120 million[79]",
+    "Original language": "English",
+    "Genre and/or major works": "Detective",
+    "Number of books": "",
+    "Nationality": "Australian"
+  },
+  "Mickey Spillane": {
+    "Min. estimated sales": "100 million[80]",
+    "Max. estimated sales": "200 million[81]",
+    "Original language": "English",
+    "Genre and/or major works": "Detective, Mike Hammer",
+    "Number of books": "",
+    "Nationality": "American"
+  },
+  "C. S. Lewis": {
+    "Min. estimated sales": "100 million[82]",
+    "Max. estimated sales": "200 million[83]",
+    "Original language": "English",
+    "Genre and/or major works": "The Chronicles of Narnia, fantasy, popular theology",
+    "Number of books": "38",
+    "Nationality": "British"
+  },
+  "Dan Brown": {
+    "Min. estimated sales": "200 million",
+    "Max. estimated sales": "200 million[86]",
+    "Original language": "English",
+    "Genre and/or major works": "Thriller, Robert Langdon",
+    "Number of books": "7[87]",
+    "Nationality": "American"
+  },
+  "Ann M. Martin": {
+    "Min. estimated sales": "172 million[88]",
+    "Max. estimated sales": "180 million[89]",
+    "Original language": "English",
+    "Genre and/or major works": "The Baby-sitters Club",
+    "Number of books": "335",
+    "Nationality": "American"
+  },
+  "Arthur Hailey": {
+    "Min. estimated sales": "150 million[91]",
+    "Max. estimated sales": "170 million[92]",
+    "Original language": "English",
+    "Genre and/or major works": "Thriller",
+    "Number of books": "11",
+    "Nationality": "British/Canadian"
+  },
+  "Anne Rice": {
+    "Min. estimated sales": "150 million",
+    "Max. estimated sales": "150 million+[95]",
+    "Original language": "English",
+    "Genre and/or major works": "Gothic fiction, vampires, Interview with the Vampire (The Vampire Chronicles) The Witching Hour (Lives of the Mayfair Witches)",
+    "Number of books": "40",
+    "Nationality": "American"
+  },
+  "Beatrix Potter": {
+    "Min. estimated sales": "100 million[97]",
+    "Max. estimated sales": "150 million[98]",
+    "Original language": "English",
+    "Genre and/or major works": "Peter Rabbit",
+    "Number of books": "23",
+    "Nationality": "English"
+  },
+  "Michael Crichton": {
+    "Min. estimated sales": "150 million[99]",
+    "Max. estimated sales": "150 million[100]",
+    "Original language": "English",
+    "Genre and/or major works": "Techno thriller",
+    "Number of books": "25",
+    "Nationality": "American"
+  },
+  "Richard Scarry": {
+    "Min. estimated sales": "100 million[101]",
+    "Max. estimated sales": "150 million[102]",
+    "Original language": "English",
+    "Genre and/or major works": "Illustrated children's books",
+    "Number of books": "250",
+    "Nationality": "American"
+  },
+  "Clive Cussler": {
+    "Min. estimated sales": "40 million[103]",
+    "Max. estimated sales": "150 million[104]",
+    "Original language": "English",
+    "Genre and/or major works": "Adventure, Dirk Pitt",
+    "Number of books": "37",
+    "Nationality": "American"
+  },
+  "Alistair MacLean": {
+    "Min. estimated sales": "150 million[105]",
+    "Max. estimated sales": "200 million[106]",
+    "Original language": "English",
+    "Genre and/or major works": "Adventure, thriller, war stories",
+    "Number of books": "32",
+    "Nationality": "Scottish"
+  },
+  "Ken Follett": {
+    "Min. estimated sales": "90 million[107]",
+    "Max. estimated sales": "150 million[108]",
+    "Original language": "English",
+    "Genre and/or major works": "Spy thriller, historical thriller",
+    "Number of books": "30",
+    "Nationality": "British"
+  },
+  "Debbie Macomber": {
+    "Min. estimated sales": "60 million[111]",
+    "Max. estimated sales": "140 million[112]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance",
+    "Number of books": "",
+    "Nationality": "American"
+  },
+  "EL James": {
+    "Min. estimated sales": "100 million",
+    "Max. estimated sales": "125 million",
+    "Original language": "English",
+    "Genre and/or major works": "Fifty Shades of Grey",
+    "Number of books": "3",
+    "Nationality": "British"
+  },
+  "Catherine Cookson": {
+    "Min. estimated sales": "100 million[116]",
+    "Max. estimated sales": "120 million[117]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance",
+    "Number of books": "103",
+    "Nationality": "British"
+  },
+  "Stephenie Meyer": {
+    "Min. estimated sales": "100 million[118]",
+    "Max. estimated sales": "116 million[119]",
+    "Original language": "English",
+    "Genre and/or major works": "The Twilight Saga, The Host, romance",
+    "Number of books": "6",
+    "Nationality": "American"
+  },
+  "Norman Bridwell": {
+    "Min. estimated sales": "100 million[120]",
+    "Max. estimated sales": "110 million[121]",
+    "Original language": "English",
+    "Genre and/or major works": "Clifford the Big Red Dog",
+    "Number of books": "80",
+    "Nationality": "American"
+  },
+  "David Baldacci": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "110 million[122]",
+    "Original language": "English",
+    "Genre and/or major works": "Thriller",
+    "Number of books": "25",
+    "Nationality": "American"
+  },
+  "Nicholas Sparks": {
+    "Min. estimated sales": "90 million[123]",
+    "Max. estimated sales": "105 million[124]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance",
+    "Number of books": "22",
+    "Nationality": "American"
+  },
+  "Evan Hunter": {
+    "Min. estimated sales": "100 million[126]",
+    "Max. estimated sales": "100 million[127]",
+    "Original language": "English",
+    "Genre and/or major works": "Detective (Ed McBain)",
+    "Number of books": "94",
+    "Nationality": "American"
+  },
+  "Andrew Neiderman": {
+    "Min. estimated sales": "100 million[128]",
+    "Max. estimated sales": "100 million[129]",
+    "Original language": "English",
+    "Genre and/or major works": "V. C. Andrews, The Devil's Advocate",
+    "Number of books": "60",
+    "Nationality": "American"
+  },
+  "Roger Hargreaves": {
+    "Min. estimated sales": "100 million[130]",
+    "Max. estimated sales": "100 million[131]",
+    "Original language": "English",
+    "Genre and/or major works": "Children's literature, Mr. Men",
+    "Number of books": "",
+    "Nationality": "British"
+  },
+  "Robin Cook": {
+    "Min. estimated sales": "100 million[132]",
+    "Max. estimated sales": "100 million[133]",
+    "Original language": "English",
+    "Genre and/or major works": "Medical thriller Coma",
+    "Number of books": "27",
+    "Nationality": "American"
+  },
+  "Wilbur Smith": {
+    "Min. estimated sales": "80 million[134]",
+    "Max. estimated sales": "100 million[135]",
+    "Original language": "English",
+    "Genre and/or major works": "African adventure",
+    "Number of books": "32",
+    "Nationality": "South African/British"
+  },
+  "Erskine Caldwell": {
+    "Min. estimated sales": "80 million[136]",
+    "Max. estimated sales": "100 million[137]",
+    "Original language": "English",
+    "Genre and/or major works": "Literature",
+    "Number of books": "25",
+    "Nationality": "American"
+  },
+  "Judith Krantz": {
+    "Min. estimated sales": "80 million [138]",
+    "Max. estimated sales": "100 million [139]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance",
+    "Number of books": "12",
+    "Nationality": "American"
+  },
+  "Eleanor Hibbert": {
+    "Min. estimated sales": "100 million[140]",
+    "Max. estimated sales": "100 million[141]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance, historical, suspense",
+    "Number of books": "200",
+    "Nationality": "British"
+  },
+  "Lewis Carroll": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "100 million[142]",
+    "Original language": "English",
+    "Genre and/or major works": "Alice's Adventures in Wonderland, absurdist literature",
+    "Number of books": "5",
+    "Nationality": "British"
+  },
+  "Denise Robins": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "100 million[143]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance",
+    "Number of books": "200",
+    "Nationality": "British"
+  },
+  "Ian Fleming": {
+    "Min. estimated sales": "100 million[145]",
+    "Max. estimated sales": "100 million[146]",
+    "Original language": "English",
+    "Genre and/or major works": "James Bond",
+    "Number of books": "14",
+    "Nationality": "British"
+  },
+  "Rex Stout": {
+    "Min. estimated sales": "100 million[149]",
+    "Max. estimated sales": "100 million[150]",
+    "Original language": "English",
+    "Genre and/or major works": "Nero Wolfe",
+    "Number of books": "50",
+    "Nationality": "American"
+  },
+  "Frank G. Slaughter": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "100 million[153]",
+    "Original language": "English",
+    "Genre and/or major works": "Medical",
+    "Number of books": "62",
+    "Nationality": "American"
+  },
+  "Edgar Rice Burroughs": {
+    "Min. estimated sales": "100 million[154]",
+    "Max. estimated sales": "100 million[155]",
+    "Original language": "English",
+    "Genre and/or major works": "Tarzan, Barsoom and Pellucidar series, science fantasy",
+    "Number of books": "",
+    "Nationality": "American"
+  },
+  "John Creasey": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "100 million[156]",
+    "Original language": "English",
+    "Genre and/or major works": "Crime thriller",
+    "Number of books": "600",
+    "Nationality": "British"
+  },
+  "James A. Michener": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "100 million[157]",
+    "Original language": "English",
+    "Genre and/or major works": "Historical",
+    "Number of books": "47",
+    "Nationality": "American"
+  },
+  "Mary Higgins Clark": {
+    "Min. estimated sales": "100 million[159]",
+    "Max. estimated sales": "100 million[160]",
+    "Original language": "English",
+    "Genre and/or major works": "Thriller",
+    "Number of books": "",
+    "Nationality": "American"
+  },
+  "Penny Jordan": {
+    "Min. estimated sales": "90 million[161]",
+    "Max. estimated sales": "100 million[162]",
+    "Original language": "English",
+    "Genre and/or major works": "Romance",
+    "Number of books": "200+",
+    "Nationality": "British"
+  },
+  "Patricia Cornwell": {
+    "Min. estimated sales": "",
+    "Max. estimated sales": "100 million[163]",
+    "Original language": "English",
+    "Genre and/or major works": "Thriller",
+    "Number of books": "34+",
+    "Nationality": "American"
+  }
+}
