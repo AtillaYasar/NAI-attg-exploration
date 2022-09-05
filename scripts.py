@@ -73,9 +73,10 @@ def generateText():
     
     return {"payload":payload, "output":output, "logprobs":logprobs}
 
+stuffFolder = r"C:\Users\Gebruiker\Desktop\attg exploration\stuff"
 def justGenerate(iterations):
     #dependencies
-    #justGenerate: generateText, makeJson, payload, uniqueTime, os
+    #justGenerate: generateText, makeJson, payload, uniqueTime, stuffFolder, os
 
     #write prompt
     prompt = payload['input']
@@ -295,8 +296,8 @@ def pListToFolder(pList, outFolder):
 
     overview = {'list of prompts':pList,
                 'payload':payload,
-                'amount of requests':len([name for name in os.listdir(outFolder) if 'first stage raw' in name])}
-    makeJson(overview, outFolder+'\\overview of this folder.json')
+                'amount of requests':len([name for name in os.listdir(os.getcwd()) if 'first stage raw' in name])}
+    makeJson(overview, 'overview of this folder.json')
     
     #os.rename(outFolder, outFolder.replace(' (b)', ''))
 
