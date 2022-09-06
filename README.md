@@ -23,7 +23,4 @@
  - better processing of the 'contexts to distributions.json' file, so that the contexts that belong together are together, and the corresponding probability distributions are summed. (the code for summing them is already in place)
  - add an easy way find an authorization key. (either a tutorial or using the Login feature from the API, if possible)
  - refactor, improve readability
- - include decoding for Krake tokens
- 
- ## Note
- - I'm not affiliated with NovelAI
+ - include decoding for Krake token
