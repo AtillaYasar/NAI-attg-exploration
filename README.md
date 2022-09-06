@@ -11,7 +11,7 @@
  NovelAI is a website where you can co-author stories with an Artifical Intelligence trained to write stories. Check it out at novelai.net
  
  ## Instructions (not non-Pythoner-friendly yet)
- - You can use
+ - You can use 'tkinter plus api.py' to generate things very easily. just open it, write your prompt in the first window and press f5 to generate.
  - usageExample.py shows how you could use scripts.py and globalVariables.py to get outputs.
 	- basically you set the prompt in prompt.txt, set research to 0 in usageExample.py, run it, and outputs will go to outputs.txt and previous outputs.txt
  - the outputs will be collected in outputs.txt in outFolder you designate in usageExample.py
