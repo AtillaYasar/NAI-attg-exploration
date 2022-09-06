@@ -22,8 +22,11 @@
  ### priority (not urgent)
  - better processing of the 'contexts to distributions.json' file, so that the contexts that belong together are together, and the corresponding probability
  - make this stuff non-Pythoner-friendly
- ## rest
+ ### rest
  - lots and lots of refactoring and rewriting
  - distributions are summed. (the code for summing them is already in place)
  - add an easy way find an authorization key. (either a tutorial or using the Login feature from the API, if possible)
  - include decoding for Krake tokens
+ - refactor, improve readability
+ - include decoding for Krake token
+>>>>>>> 40da336c451a7581472aca69c581dc548fc029f8
