@@ -59,6 +59,7 @@ def generateText():
 
     url = "https://api.novelai.net/ai/generate"
     response = requests.request("POST", url, headers=headers, data = json.dumps(payload))
+    
     content = response.content
     
     decodedContent = content.decode()
@@ -85,7 +86,7 @@ def justGenerate(iterations):
             with open('outputs.txt', 'r') as f:
                 f2.write(f.read())
         
-    with open('outputs.txt', 'w') as f:
+    with open('outputs.txt', 'w', encoding='utf-8') as f:
         f.write(''.join(['====== prompt: ======\n', prompt, '\n====== outputs ======\n', '------------------------------', '\n']))
         print(''.join(['====== prompt: ======\n', prompt, '\n====== outputs ======\n', '------------------------------', '\n']))
 
@@ -94,7 +95,7 @@ def justGenerate(iterations):
         response = generateText()
         output = response['output']
         
-        with open('outputs.txt', 'a') as f:
+        with open('outputs.txt', 'a', encoding='utf-8') as f:
             f.write(''.join([output, '\n', '------------------------------', '\n']))
             print(''.join([output, '\n', '------------------------------', '\n']))
 
@@ -139,7 +140,7 @@ def listToFile(list_arg, filename, overwrite = 0):
         mode = "w"
     else:
         mode = "x"
-    with open(filename, mode) as f:
+    with open(filename, mode, encoding='utf-8') as f:
         json.dump(list_arg, f, indent=2)
     return 0
 
@@ -190,7 +191,7 @@ def firstStageGeneration(promptList, outputFolder):
         response = generateText()
         
         outputsName = outputFolder + "\\outputs.txt"
-        with open(outputsName, "a") as f:
+        with open(outputsName, "a", encoding='utf-8') as f:
             f.write(''.join([response['output'], '\n', '------------------------------', '\n']))
             
         processed = processResponse(prompt, response)
