@@ -7,31 +7,32 @@ with open('prompt.txt', 'r') as f:
         
 alterations = {
     'input':contents,
-    'model':'euterpe-v2'}
+    'model':'6B-v4'}
 
 updateScriptsPayload(alterations) 
 
 #the actual point of this repo.
-if 1:
+research = False
+if research:
     iterations = 5
 
     folderName = 'example folder'
     if folderName not in os.listdir(os.getcwd()):
         os.mkdir(folderName)
            
-    baseFolder = os.getcwd()
+    baseFolder = r'C:\Users\Gebruiker\Desktop\attg exploration'
     outFolder = baseFolder + '\\' + folderName + "\\" + uniqueTime()
     pListToFolder( [alterations['input']]*iterations, outFolder)
     linkDistributions(outFolder)
 
 
-#for just generating for fun. output will be in outputs.txt and previous outputs.txt
-#write the prompt in prompt.txt in the folder ../attg exploration
+#for just generating for fun. output will be in outputs.txt. write the prompt in prompt.txt in the folder ../attg exploration
 # and set iterations to whatever you want.
-if 0:
-    iterations = 3
+if not research:
+    iterations = 4
 
-    justGenerate(iterations)
+    generateForFun(iterations)
+
 
 
 

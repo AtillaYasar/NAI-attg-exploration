@@ -19,11 +19,11 @@
 	- you can find your authorization key from the network tab if you inspect the NAI page when you generate something, in 'generate', under 'Request Headers'
  
  ## partial to-do list
+ ### priority (not urgent)
+ - better processing of the 'contexts to distributions.json' file, so that the contexts that belong together are together, and the corresponding probability
  - make this stuff non-Pythoner-friendly
- - better processing of the 'contexts to distributions.json' file, so that the contexts that belong together are together, and the corresponding probability distributions are summed. (the code for summing them is already in place)
+ ## rest
+ - lots and lots of refactoring and rewriting
+ - distributions are summed. (the code for summing them is already in place)
  - add an easy way find an authorization key. (either a tutorial or using the Login feature from the API, if possible)
- - refactor, improve readability
  - include decoding for Krake tokens
- 
- ## Note
- - I'm not affiliated with NovelAI

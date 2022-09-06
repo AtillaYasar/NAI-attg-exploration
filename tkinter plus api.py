@@ -5,6 +5,11 @@ import json, requests, threading, ast
 from tkinter import*
 
 
+def readTxt(fileName):
+    with open(fileName, 'r', encoding='utf-8') as f:
+        contents = f.read()
+    return contents
+
 # making calls with the NovelAI API, it generates text using an AI
 def apiCall(context):
 
@@ -28,9 +33,12 @@ def apiCall(context):
 
     return output
 
+def getFromText(textWidget):
+    return textWidget.get(1.0, 'end')[:-1]
+
 # button function
 def newGeneration():
-    context = promptText.get(1.0, 'end')[:-1]
+    context = getFromText(promptText)
     apiResponse = apiCall(context)
 
     # clear text widget and put response in
@@ -39,13 +47,10 @@ def newGeneration():
 
 # not in use yet.
 def continueGeneration():
-    context = promptText.get(1.0, 'end')[:-1] + text.get()(1.0, 'end')[:-1]
+    context = getFromText(promptText) + getFromText(text)
     apiResponse = apiCall(context)
 
-def readFile(fileName):
-    with open(fileName, 'r', encoding='utf-8') as f:
-        contents = f.read()
-    return contents
+
 
 root = Tk()
 
@@ -65,7 +70,7 @@ root.bind('<KeyPress-F5>', lambda *args:threading.Thread(target=newGeneration).s
 for w in label, promptText, text:
     w.pack()
 
-promptText.insert(1.0, readFile('prompt.txt'))
+promptText.insert(1.0, readTxt('prompt.txt'))
 
 
 

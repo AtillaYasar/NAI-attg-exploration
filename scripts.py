@@ -48,6 +48,19 @@ def openJson(filename):
         f.close()
     return contents
 
+def createTxt(path, content):
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(content)
+        
+def appendTxt(path, appendage):
+    with open(path, 'a', encoding='utf-8') as f:
+        f.write(appendage)
+
+def readTxt(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        contents = f.read()
+    return contents
+
 generationCount = 0
 #generates text using the NovelAI API
 #also prints the count each time it generated something.
@@ -75,29 +88,62 @@ def generateText():
     return {"payload":payload, "output":output, "logprobs":logprobs}
 
 stuffFolder = r"C:\Users\Gebruiker\Desktop\attg exploration\stuff"
-def justGenerate(iterations):
+def generateForFun(iterations, store=1):
     #dependencies
-    #justGenerate: generateText, makeJson, payload, uniqueTime, stuffFolder, os
+    #generateForFun: generateText, makeJson, payload, uniqueTime, stuffFolder, os, createTxt, appendTxt, readTxt, uniqueTime
+    
+    if not store:
+        prompt = payload['input']
 
-    #write prompt
-    prompt = payload['input']
-    if 'outputs.txt' in os.listdir(os.getcwd()):
-        with open('previous outputs.txt', 'w') as f2:
-            with open('outputs.txt', 'r') as f:
-                f2.write(f.read())
-        
-    with open('outputs.txt', 'w', encoding='utf-8') as f:
-        f.write(''.join(['====== prompt: ======\n', prompt, '\n====== outputs ======\n', '------------------------------', '\n']))
-        print(''.join(['====== prompt: ======\n', prompt, '\n====== outputs ======\n', '------------------------------', '\n']))
+        # if outputs already exists, store outputs.txt in previous outputs.txt before overwriting it
+        if 'outputs.txt' in os.listdir(os.getcwd()):
+            previous = readTxt('outputs.txt')
+            createTxt('previous outputs.txt', previous)
 
-    #write each iteration as it comes out
-    for i in range(iterations):
-        response = generateText()
-        output = response['output']
+        # write initial prompt
+        text = ''.join(['====== prompt: ======\n', prompt, '\n====== outputs ======\n', '------------------------------', '\n'])
+        createTxt('outputs.txt', text)
+        print(text)
+
+        # add each iteration as it comes out
+        for i in range(iterations):
+            response = generateText()
+            output = response['output']
+
+            text = ''.join([output, '\n', '------------------------------', '\n'])
+            appendTxt('outputs.txt', text)
+            print(text)
+    else:
+        # same thing, except it also stores outputs.txt in a folder with a special timestamp
+
+        currentFolder = os.getcwd()
+        if 'non research stuff' not in os.listdir(currentFolder):
+            os.mkdir('non research stuff')
+
+        outputPath = currentFolder + '\\non research stuff' + '\\' + 'outputs ' + uniqueTime() + '.txt'
+        prompt = payload['input']
         
-        with open('outputs.txt', 'a', encoding='utf-8') as f:
-            f.write(''.join([output, '\n', '------------------------------', '\n']))
-            print(''.join([output, '\n', '------------------------------', '\n']))
+        # if outputs already exists, store outputs.txt in previous outputs.txt before overwriting it
+        if 'outputs.txt' in os.listdir(os.getcwd()):
+            previous = readTxt('outputs.txt')
+            createTxt('previous outputs.txt', previous)
+        
+        # write initial prompt
+        text = ''.join(['====== prompt: ======\n', prompt, '\n====== outputs ======\n', '------------------------------', '\n'])
+        createTxt('outputs.txt', text)
+        createTxt(outputPath, text)
+        print(text)
+
+        # add each iteration as it comes out
+        for i in range(iterations):
+            response = generateText()
+            output = response['output']
+
+            text = ''.join([output, '\n', '------------------------------', '\n'])
+            appendTxt('outputs.txt', text)
+            appendTxt(outputPath, text)
+            print(text)
+
 
 def splitDictionary(dict_arg, names, contents, ID, extension, folder):
     #dependencies
