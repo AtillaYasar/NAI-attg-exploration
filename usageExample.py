@@ -19,10 +19,9 @@ from globalVariables import headers, defaultPayload
 '''
 
 "set parameters here"
-useCoded = True
-research = False
-iterations = 2
-
+useCoded = False
+research = True
+iterations = 5
 
 
 "dont go below"
@@ -46,7 +45,7 @@ if research:
     if folderName not in os.listdir(os.getcwd()):
         os.mkdir(folderName)
            
-    baseFolder = r'C:\Users\Gebruiker\Desktop\attg exploration'
+    baseFolder = os.getcwd()
     outFolder = baseFolder + '\\' + folderName + "\\" + uniqueTime()
     pListToFolder( [alterations['input']]*iterations, outFolder)
     linkDistributions(outFolder)
