@@ -9,7 +9,7 @@
  
  There is some stuff to just play around with the AI as well. You can do that in 'usageExample.py' if you set research to False, and in 'tkinter plus api.py'
  
- A major goal is to make it easily usable by people who don't know anything coding, but it's not there yet. 'tkinter plus api.py' does that, but what you can do there is very limited.
+ A major goal is to make it easily usable by people who don't know anything about coding, but it's not there yet. 'tkinter plus api.py' does that, but what you can do there is very limited.
  
  
  ## What is NovelAI?
