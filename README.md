@@ -1,12 +1,16 @@
 # NAI-attg-exploration
  
  ## What is this for?
- This code is to allow people with no coding experience to do research on the bracketed stuff at the start of a NovelAI story. (attg and more) 
  
- (There is some stuff to just play around with the AI as well. You can do that in 'usageExample.py' if you set research to False, and in 'tkinter plus api.py')
+ This code is to allow people to do research on the bracketed stuff at the start of a NovelAI story. (attg and more) 
  
  It makes API calls, processes the responses and puts them into json files.
  Then goes through the responses, including the probabilities of alternative tokens (logprobs), and puts them together into one json, so you can gain insights from them. (this "gaining insights" part still needs work) 
+ 
+ There is some stuff to just play around with the AI as well. You can do that in 'usageExample.py' if you set research to False, and in 'tkinter plus api.py'
+ 
+ A major goal is to make it easily usable by people who don't know anything coding, but it's not there yet.
+ 
  
  ## What is NovelAI?
  NovelAI is a website where you can co-author stories with an Artifical Intelligence trained to write stories. Check it out at novelai.net
