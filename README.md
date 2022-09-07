@@ -2,7 +2,8 @@
  
  ## What is this for?
  This code is to allow people with no coding experience to do research on the bracketed stuff at the start of a NovelAI story. (attg and more) 
- (There is some stuff to just play around with the API as well. For now there is 'tkinter plus api.py' and 'usageExample.py' if you set 'research' to 0.)
+ 
+ (There is some stuff to just play around with the AI as well. You can do that in 'usageExample.py' if you set research to False, and in 'tkinter plus api.py')
  
  It makes API calls, processes the responses and puts them into json files.
  Then goes through the responses, including the probabilities of alternative tokens (logprobs), and puts them together into one json, so you can gain insights from them. (this "gaining insights" part still needs work) 
@@ -17,7 +18,8 @@
  - the outputs will be collected in outputs.txt in outFolder you designate in usageExample.py
  - if you don't set an authorization key in globalVariables.py, meaning, if you leave it as is, I *think* it will use up your free trial generations. I am not 100% sure. Mostly sure.
 	- you can find your authorization key from the network tab if you inspect the NAI page when you generate something, in 'generate', under 'Request Headers'
- 
+ - instructions for doing permutations are in permutations explanation, but in summary: $$$<version 1 name>:<text>,,,<version 2 name>:<text>$$$
+
  ## partial to-do list
  ### priority (not urgent)
  - better processing of the 'contexts to distributions.json' file, so that the contexts that belong together are together, and the corresponding probability
@@ -29,4 +31,4 @@
  - include decoding for Krake tokens
  - refactor, improve readability
  - include decoding for Krake token
->>>>>>> 40da336c451a7581472aca69c581dc548fc029f8
+ - integrate everything into the tkinter app (tkinter plus api.py)

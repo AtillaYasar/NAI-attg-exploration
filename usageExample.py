@@ -2,20 +2,46 @@ from scripts import*
 from globalVariables import headers, defaultPayload
 
 
-with open('prompt.txt', 'r') as f:
-    contents = f.read()
+
+'''instructions:
+1) write your prompt in prompt.txt or in coded prompt.txt
+2) set parameters below
+3) run this file
+4) results will appear in:
+    if useCoded is True:
+        coded outputs.txt' in this folder
         
+    if research is True:
+        in the 'example folder' folder, in a subfolder there
+
+    if research is False and useCoded is False:
+        'outputs.txt' and 'previous outputs.txt' in this folder and in the 'non research stuff' folder
+'''
+
+"set parameters here"
+useCoded = True
+research = False
+iterations = 2
+
+
+
+"dont go below"
+
+if useCoded:
+    prompt = readTxt('coded prompt.txt')
+else:
+    prompt = readTxt('prompt.txt')
+
 alterations = {
-    'input':contents,
+    'input':prompt,
     'model':'6B-v4'}
 
-updateScriptsPayload(alterations) 
+updateScriptsPayload(alterations)
+
+
 
 #the actual point of this repo.
-research = False
 if research:
-    iterations = 5
-
     folderName = 'example folder'
     if folderName not in os.listdir(os.getcwd()):
         os.mkdir(folderName)
@@ -29,8 +55,6 @@ if research:
 #for just generating for fun. output will be in outputs.txt. write the prompt in prompt.txt in the folder ../attg exploration
 # and set iterations to whatever you want.
 if not research:
-    iterations = 4
-
     generateForFun(iterations)
 
 

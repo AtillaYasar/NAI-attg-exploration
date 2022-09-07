@@ -66,7 +66,7 @@ generationCount = 0
 #also prints the count each time it generated something.
 def generateText():
     #dependencies
-    #generateText: ast, json, requests, generationCount
+    #generateText: ast, json, requests, generationCount, interpretVersions
     
     global generationCount
 
@@ -87,13 +87,91 @@ def generateText():
     
     return {"payload":payload, "output":output, "logprobs":logprobs}
 
+# checks if all elements of a list are the same
+def allSame(lst):
+    #no dependencies
+    
+    if len(lst) == 1:
+        return True
+    
+    for n in range(len(lst)-1):
+        if lst[n] != lst[n+1]:
+            return False
+    return True
+
+def interpretVersions(txt):
+    #dependencies
+    #interpretVersions: allSame
+
+    if txt.count('$$$') % 2 != 0:
+        print('error: amount of $$$ is not even')
+        
+    decoded = {}
+    versionCounts = []
+    
+    sections = txt.split('$$$')
+    for n, section in enumerate(sections):
+        if n%2 == 1:
+            decoded[n] = []
+            
+            versionCount = len(section.split(',,,'))
+            versionCounts.append(versionCount)
+            
+            for version in section.split(',,,'):
+                
+                versionName, _, text = version.partition(':')
+
+                decoded[n].append(text)
+                
+    if not allSame(versionCounts):
+        exit('missing versions')
+    else:
+        versions = versionCounts[0]
+        textVersions = []
+        for _ in range(versions):
+            textVersions.append('')
+
+    for sectionN in range(len(sections)):
+        if sectionN%2 == 0:
+            normalText = sections[sectionN]
+            for versionN in range(len(textVersions)):
+                textVersions[versionN] += normalText
+        else:
+            textList = decoded[sectionN]
+            for versionN, text in enumerate(textList):
+                textVersions[versionN] += textList[versionN]
+        
+    return textVersions
+
 stuffFolder = r"C:\Users\Gebruiker\Desktop\attg exploration\stuff"
 def generateForFun(iterations, store=1):
     #dependencies
     #generateForFun: generateText, makeJson, payload, uniqueTime, stuffFolder, os, createTxt, appendTxt, readTxt, uniqueTime
+
+    prompt = payload['input']
+
+    if '$$$' in prompt:
+        toAdd = ''.join(['~~~~ coded prompt: ~~~~\n', prompt, '\n~~~~\n'])
+
+        outputsName = 'coded outputs.txt'
+        createTxt(outputsName, toAdd)
+        
+        promptVersions = interpretVersions(prompt)
+        for n, promptVersion in enumerate(promptVersions):
+            payload['input'] = promptVersion
+            
+            toAdd = ''.join(['\n====== prompt: ======\n', promptVersion, '\n====== outputs ======\n', '------------------------------', '\n'])
+            appendTxt(outputsName, toAdd)
+            
+            for i in range(iterations):
+                response = generateText()
+                output = response['output']
+                
+                toAdd = ''.join([output, '\n', '------------------------------', '\n'])
+                appendTxt(outputsName, toAdd)
+        return 0
     
     if not store:
-        prompt = payload['input']
 
         # if outputs already exists, store outputs.txt in previous outputs.txt before overwriting it
         if 'outputs.txt' in os.listdir(os.getcwd()):

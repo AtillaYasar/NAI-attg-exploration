@@ -1,0 +1,23 @@
+The format: $$$<version 1 name>:<text>,,,<version 2 name>:<text>$$$
+- So 3 dollah dollah bills at the start and end, triple commas to separate versions, and a colon to separate a version's name from its text
+
+- You can put these multiple times in the same prompt, if a version affects multiple different parts of the text
+- The numbers don't affect anything, they are just for your own convenience, in case you have a lot of versions
+- Put the coded prompt in 'coded prompt.txt', and the outputs will appear in 'coded outputs.txt'
+
+Example:
+$$$a:version a,,,69:version b$$$
+[ Author: $$$a:some schmuck,,,69:Atilla$$$; Tags: adventure, urban fantasy ]
+You are a bored young man, sitting in a park one day. And will be visited by a crazy wizard who will show you something amazing that will change your life.
+***
+
+This will create the following 2 prompts:
+version a
+[ Author: some schmuck; Tags: adventure, urban fantasy ]
+You are a bored young man, sitting in a park one day. And will be visited by a crazy wizard who will show you something amazing that will change your life.
+***
+and
+version 69
+[ Author: Atilla; Tags: adventure, urban fantasy ]
+You are a bored young man, sitting in a park one day. And will be visited by a crazy wizard who will show you something amazing that will change your life.
+***
