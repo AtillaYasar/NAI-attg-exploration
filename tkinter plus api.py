@@ -2,7 +2,8 @@
 from globalVariables import headers, defaultPayload
 
 import json, requests, threading, ast
-from tkinter import*
+import tkinter as tk
+from tkinter import ttk
 
 
 def readTxt(fileName):
@@ -14,7 +15,8 @@ def readTxt(fileName):
 def apiCall(context):
 
     # settings for the generation
-    payload = defaultPayload
+    payload = json.loads(getFromText(parametersText))
+    payload['input'] = getFromText(promptText)
     del payload['parameters']['num_logprobs']
 
     url = "https://api.novelai.net/ai/generate"
@@ -34,7 +36,8 @@ def apiCall(context):
     return output
 
 def getFromText(textWidget):
-    return textWidget.get(1.0, 'end')[:-1]
+    text = textWidget.get(1.0, 'end')[:-1]
+    return text
 
 # button function
 def newGeneration():
@@ -52,27 +55,39 @@ def continueGeneration():
 
 
 
-root = Tk()
+root = tk.Tk()
 
 # style
-textSettings = {'bg':'black', 'insertbackground':'red', 'fg':'light blue', 'height':'10', 'font':('comic sans', '15')}
+textSettings = {'bg':'black', 'insertbackground':'red', 'fg':'light blue', 'height':'20', 'width':'100', 'font':('comic sans', '15')}
 labelSettings = {'font':('comic sans', '10')}
 
 # make widgets
-label = Label(root, text='press f5 to generate', **labelSettings)
-promptText = Text(root, **textSettings)
-text = Text(root, **textSettings)
+tabContainer = tk.ttk.Notebook(root)
+tabContainer.enable_traversal()
+
+parametersTab = tk.Frame(root)
+promptTab = tk.Frame(root)
+displayTab = tk.Frame(root)
+
+tabContainer.add(parametersTab, text='parameters')
+tabContainer.add(promptTab, text='prompt')
+tabContainer.add(displayTab, text='results')
+
+parametersText = tk.Text(parametersTab, **textSettings)
+label = tk.Label(displayTab, text='press f5 to generate', **labelSettings)
+promptText = tk.Text(promptTab, **textSettings)
+text = tk.Text(displayTab, **textSettings)
+
 
 # putting the API call on a different thread, so that it doesn't freeze the app during generation
 root.bind('<KeyPress-F5>', lambda *args:threading.Thread(target=newGeneration).start())
 
 # place widgets
-for w in label, promptText, text:
+for w in tabContainer, promptText, text, parametersText:
     w.pack()
 
 promptText.insert(1.0, readTxt('prompt.txt'))
-
-
+parametersText.insert(1.0, str(json.dumps({k:v for k,v in defaultPayload.items() if k != 'input'}, indent=2)))
 
 
 root.mainloop()
